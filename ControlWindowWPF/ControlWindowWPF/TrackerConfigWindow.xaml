@@ -10,7 +10,7 @@
         <GroupBox Header="{DynamicResource TrackerConfigWindow_TrackerConfig}" DockPanel.Dock="Top">
             <Grid>
                 <Grid.Resources>
-                    <Style TargetType="ComboBox">
+                    <Style TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
                         <Setter Property="ItemTemplate">
                             <Setter.Value>
                                 <DataTemplate>

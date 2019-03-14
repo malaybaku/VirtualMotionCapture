@@ -21,7 +21,7 @@
         <GroupBox Header="{DynamicResource SettingWindow_ExternalCameraConfig}">
             <DockPanel>
                 <DockPanel.Resources>
-                    <Style TargetType="ComboBox">
+                    <Style TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
                         <Setter Property="ItemTemplate">
                             <Setter.Value>
                                 <DataTemplate>

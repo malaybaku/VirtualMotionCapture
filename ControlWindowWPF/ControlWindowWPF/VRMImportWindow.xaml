@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="{DynamicResource VRMImportWindowTitle}" Height="565" Width="1120" ResizeMode="CanMinimize" Icon="Resources/VirtualMotionCapture.ico">
     <Window.Resources>
-        <Style TargetType="TextBox">
+        <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
             <Setter Property="Margin" Value="8,3,0,3"/>
             <Setter Property="Padding" Value="4,1"/>
             <Setter Property="IsReadOnly" Value="True"/>
@@ -17,7 +17,7 @@
             <Setter Property="FontSize" Value="13"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
-        <Style TargetType="GroupBox">
+        <Style TargetType="GroupBox" BasedOn="{StaticResource {x:Type GroupBox}}">
             <Setter Property="FontSize" Value="20"/>
         </Style>
     </Window.Resources>
