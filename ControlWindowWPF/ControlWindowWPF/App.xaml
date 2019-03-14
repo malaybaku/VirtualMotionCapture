@@ -64,6 +64,15 @@
                         <!-- no setter: 既定スタイルをマテリアルデザインのものに差し替えるのが狙い -->
                     </Style>
 
+                    <Style TargetType="RadioButton" BasedOn="{StaticResource MaterialDesignRadioButton}">
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="Margin" Value="0,3" />
+                    </Style>
+                    <Style TargetType="GroupBox" BasedOn="{StaticResource MaterialDesignGroupBox}">
+                        <Setter Property="Margin" Value="5"/>
+                    </Style>
+
                     <!-- Dragablz Material Design -->
                     <Style TargetType="{x:Type dragablz:TabablzControl}" BasedOn="{StaticResource MaterialDesignTabablzControlStyle}" />
 

@@ -4,11 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VirtualMotionCaptureControlPanel"
-        mc:Ignorable="d" Width="360" Height="185"
-        Title="{DynamicResource MainWindowTitle}" FontSize="14" ResizeMode="CanMinimize" Background="#2A2A2A" Loaded="Window_Loaded" Closing="Window_Closing" Icon="Resources/VirtualMotionCapture.ico">
+        xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+        mc:Ignorable="d" Width="420" Height="200"
+        Title="{DynamicResource MainWindowTitle}" FontSize="14" ResizeMode="CanMinimize" 
+        Background="{DynamicResource MaterialDesignBackground}"
+        Loaded="Window_Loaded"
+        Closing="Window_Closing" 
+        Icon="Resources/VirtualMotionCapture.ico"
+        >
     <Grid>
         <Button Visibility="Collapsed"/> <!--This Button for fix style bug-->
-        <TabControl Margin="5">
+        <dragablz:TabablzControl Margin="0">
             <TabItem Header="{DynamicResource MainWindow_Setting}" ToolTip="{DynamicResource MainWindow_Setting_ToolTip}">
                 <UniformGrid Rows="2" Columns="3">
                     <Button Content="{DynamicResource MainWindow_LoadSetting}" Name="LoadSettingsButton" Click="LoadSettingsButton_Click" ToolTip="{DynamicResource MainWindow_LoadSetting_ToolTip}"/>
@@ -20,7 +26,7 @@
                 </UniformGrid>
             </TabItem>
             <TabItem Header="{DynamicResource MainWindow_Background}" ToolTip="{DynamicResource MainWindow_Background_ToolTip}">
-                <StackPanel Orientation="Vertical">
+                <StackPanel Margin="5">
                     <UniformGrid Rows="1" Columns="5">
                         <Button Content="{DynamicResource MainWindow_GB}" Background="#00FF00" Foreground="Black" Name="ColorGreenButton" Click="ColorGreenButton_Click" ToolTip="{DynamicResource MainWindow_GB_ToolTip}"/>
                         <Button Content="{DynamicResource MainWindow_BB}" Background="#0000FF" Foreground="White" Name="ColorBlueButton" Click="ColorBlueButton_Click" ToolTip="{DynamicResource MainWindow_BB_ToolTip}"/>
@@ -38,7 +44,7 @@
                 </StackPanel>
             </TabItem>
             <TabItem Header="{DynamicResource MainWindow_Camera}">
-                <StackPanel Orientation="Vertical">
+                <StackPanel Margin="5">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -84,7 +90,7 @@
                 <TabItem.Header>
                     <TextBlock Text="{DynamicResource MainWindow_LipSync}" Name="LipsyncTabTextBlock" Background="PaleVioletRed"/>
                 </TabItem.Header>
-                <StackPanel Orientation="Vertical">
+                <StackPanel Margin="5">
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
                         <CheckBox Content="{DynamicResource MainWindow_EnableLipSync}" Name="LipSyncCheckBox" Checked="LipSyncCheckBox_Checked" Unchecked="LipSyncCheckBox_Unchecked" ToolTip="{DynamicResource MainWindow_EnableLipSync_ToolTip}"/>
                         <CheckBox Content="{DynamicResource MainWindow_MaxWeight}" Name="MaxWeightCheckBox" Checked="MaxWeightCheckBox_Checked" Unchecked="MaxWeightCheckBox_Unchecked" ToolTip="{DynamicResource MainWindow_MaxWeight_ToolTip}"/>
@@ -115,7 +121,7 @@
                 </StackPanel>
             </TabItem>
             <TabItem Header="{DynamicResource MainWindow_Face}" ToolTip="{DynamicResource MainWindow_Face_ToolTip}">
-                <StackPanel Orientation="Vertical">
+                <StackPanel Margin="5">
                     <DockPanel Margin="0">
                         <CheckBox Content="{DynamicResource MainWindow_AutoBlink}" Margin="0" Name="AutoBlinkCheckBox" Checked="AutoBlinkCheckBox_Checked" Unchecked="AutoBlinkCheckBox_Unchecked" ToolTip="{DynamicResource MainWindow_AutoBlink_ToolTip}"/>
                         <ComboBox Name="DefaultFaceComboBox" DockPanel.Dock="Right" Width="110" SelectionChanged="DefaultFaceComboBox_SelectionChanged" ToolTip="{DynamicResource MainWindow_DefaultFace_ToolTip}"/>
@@ -157,6 +163,6 @@
                     </Grid>
                 </StackPanel>
             </TabItem>
-        </TabControl>
+        </dragablz:TabablzControl>
     </Grid>
 </Window>
